@@ -6,5 +6,5 @@ Moskit - Git hooks
 ## Instalação
 
 ```shell
-curl -o .git/hooks/commit-msg https://raw.githubusercontent.com/moskitcrm/git-hooks/main/commit-msg
+curl -o .git/hooks/commit-msg https://raw.githubusercontent.com/moskitcrm/git-hooks/main/commit-msg && chmod 500 .git/hooks/commit-msg
 ```
