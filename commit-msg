@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-commitTitle="$(cat $1 | head -n1)"
+commitTitle="$(cat $1)"
 
 # ignore merge requests
 if echo "$commitTitle" | grep -qE "Merge branch"; then
@@ -28,7 +28,7 @@ if ! echo "$commitTitle" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|ch
 	exit 1
 fi
 
-if ! echo "$commit_msg" | grep -qE "DEVV-[0-9]+"; then
+if ! echo "$commitTitle" | grep -qE "DEVV-[0-9]+"; then
   echo "Erro: A mensagem de commit deve conter o id da story que está sendo trabalhado."
   echo "Exemplo: DEVV-1234"
   exit 1
